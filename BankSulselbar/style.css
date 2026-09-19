@@ -1,189 +1,468 @@
+/* ============================================== */
+/* 🎨 STYLE — WARNA & GAYA TETAP SEPERTI AWAL */
+/* ============================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-    -webkit-tap-highlight-color: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
-html, body {
+
+body {
+    background: #006E53;
+    min-height: 100vh;
+}
+
+.halaman {
+    display: none;
+    min-height: 100vh;
+}
+
+.halaman.aktif {
+    display: block;
+}
+
+/* ============================================== */
+/* 🏠 HALAMAN AWAL — GEBYAR UNDIAN BANK SULSELBAR */
+/* ============================================== */
+.latar-pola {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: #FFFFFF;
-    color: #000000;
+    background: linear-gradient(135deg, #006E53 0%, #008968 100%);
+    z-index: 0;
 }
 
-:root {
-    --hijau-utama: #84B829;
-    --hijau-terang: #96C82B;
-    --hijau-gelap: #709E20;
-    --teks-hijau: #689F20;
-    --putih: #FFFFFF;
-    --garis: #E0E0E0;
-}
-
-.halaman { display: none; width: 100%; min-height: 100vh; background: linear-gradient(180deg, var(--hijau-utama) 0%, var(--hijau-terang) 100%); }
-.halaman.aktif { display: block; }
-.halaman-putih { background: #FFFFFF; }
-
-/* ✅ HEADER HIJAU — DIPENDEKKAN */
-.header-hijau {
-    background: var(--hijau-utama); 
-    color: white;
-    padding: 14px 16px 12px;
-    display: flex; 
-    align-items: center; 
-    gap: 10px;
-    position: sticky; 
-    top: 0; 
-    z-index: 100;
-    min-height: 48px;
-}
-.panah-kembali { font-size: 20px; cursor: pointer; font-weight: 400; }
-.judul-header { font-size: 16px; font-weight: 500; }
-
-.tengah {
+.konten-awal {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding: 60px 24px 40px;
+    min-height: 100vh;
+}
+
+/* Pita Atas */
+.pita-atas-awal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.bintang {
+    color: #fff;
+    font-size: 22px;
+    animation: berkedip 1.5s infinite;
+}
+
+@keyframes berkedip {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.teks-pita-awal {
+    background: #fff;
+    color: #006E53;
+    padding: 8px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* 🎫 Logo Festival */
+.logo-festival {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 16px;
+    animation: memantul 3s infinite;
+}
+
+.logo-festival img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+@keyframes memantul {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.nama-bank-awal {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Judul Gebyar Undian */
+.judul-gebyar {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.sub-judul-gebyar {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 16px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.deskripsi-awal {
+    color: #d4f1e6;
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* Tombol Mulai */
+.tombol-bawah-awal {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.btn-mulai {
+    width: 100%;
+    padding: 18px;
+    background: #fff;
+    color: #006E53;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-mulai:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.footer-awal {
+    color: #b2e0cc;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* ============================================== */
+/* 📝 HALAMAN PUTIH — REGISTRASI & PIN */
+/* ============================================== */
+.halaman-putih {
+    background: #fff;
+    min-height: 100vh;
+}
+
+.header-hijau {
+    background: #006E53;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.panah-kembali {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.panah-kembali:active {
+    transform: translateX(-3px);
+}
+
+.judul-header {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.konten {
+    padding: 28px 20px;
+}
+
+.teks-keterangan {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+.label-input {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 22px;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.input-field:focus {
+    border-color: #006E53;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(0,110,83,0.1);
+}
+
+.btn-hijau {
+    width: 100%;
+    padding: 16px;
+    background: #006E53;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,110,83,0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-hijau:active {
+    transform: scale(0.98);
+    background: #005a45;
+}
+
+/* ============================================== */
+/* 🔢 KOTAK PIN — HANYA ANGKA */
+/* ============================================== */
+.info-teks {
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.kotak-kode {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.kolom-kode {
+    width: 52px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.kolom-kode:focus {
+    border-color: #006E53;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(0,110,83,0.15);
+}
+
+.petunjuk-pin {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-top: 16px;
+}
+
+/* ============================================== */
+/* 🎫 HALAMAN KUPON UNDIAN — MENARIK, WARNA TETAP */
+/* ============================================== */
+.kupon-konten {
+    padding: 20px;
+}
+
+.pita-atas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ikon-bintang {
+    color: #006E53;
+    font-size: 20px;
+    animation: berkedip 1.5s infinite;
+}
+
+.teks-pita {
+    background: #006E53;
+    color: #fff;
+    padding: 6px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0,110,83,0.3);
+}
+
+.kartu-kupon {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    box-shadow: 0 8px 32px rgba(0,110,83,0.25);
+}
+
+.latar-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #006E53;
+    opacity: 0.95;
+    z-index: 0;
+}
+
+.isi-kupon {
     position: relative;
     z-index: 1;
+    padding: 30px 24px;
+    text-align: center;
+    color: #fff;
 }
-.tombol-bawah { padding: 0 30px; margin-top: 50px; position: relative; z-index: 1; }
-.konten { padding: 20px 20px; }
-.teks-keterangan { font-size: 13px; color: #666; margin-bottom: 16px; }
-.label-input { font-size: 14px; color: #333; margin-bottom: 6px; display: block; }
-.input-field {
-    width: 100%; padding: 12px 12px;
-    border: none; border-bottom: 1px solid var(--garis);
-    font-size: 15px; background: transparent;
-    margin-bottom: 12px;
-}
-.input-field:focus { outline: none; border-bottom-color: var(--hijau-utama); }
-.btn-hijau {
-    width: 100%; padding: 14px;
-    background: var(--hijau-utama); color: white;
-    border: none; border-radius: 4px;
-    font-size: 16px; font-weight: 600;
-    cursor: pointer; margin-top: 8px;
-}
-.btn-hijau:active { background: var(--hijau-gelap); }
-.btn-putih {
-    width: 100%; padding: 14px;
-    background: white; color: var(--teks-hijau);
-    border: none; border-radius: 4px;
-    font-size: 16px; font-weight: 500;
-    cursor: pointer; margin: 10px 0;
-}
-.btn-putih:active { background: #f0f0f0; }
 
-.latar-pola {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(105deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size: 40px 80px;
-    opacity: 0.4; pointer-events: none;
+.ikon-sukses {
+    font-size: 48px;
+    margin-bottom: 12px;
+    animation: memantul 2s infinite;
 }
-.logo-sulselbar {
-    width: 100px; height: 100px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="white" d="M50,10 Q70,25 85,50 Q75,40 60,35 Q45,30 30,35 Q25,20 50,10 Z M50,35 Q65,40 80,55 Q65,50 50,48 Q35,50 20,55 Q35,40 50,35 Z M50,50 Q70,60 90,80 Q70,70 50,65 Q30,70 10,80 Q30,60 50,50 Z"/></svg>') no-repeat center;
-    background-size: contain;
+
+.judul-kupon {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.subjudul-kupon {
+    font-size: 14px;
+    opacity: 0.9;
     margin-bottom: 16px;
 }
-.logo-sulselbar.kecil { width: 80px; height: 80px; }
-.nama-bank { color: white; font-size: 24px; font-weight: 600; }
-.nama-bank.kecil { font-size: 20px; }
-.tagline-app { color: white; font-size: 16px; opacity: 0.9; margin-top: 6px; }
-.tagline-app.kecil { font-size: 14px; }
-.call-center { color: white; font-size: 13px; opacity: 0.8; margin-top: 8px; }
-.footer-keterangan {
-    position: absolute; bottom: 15px; left: 20px; right: 20px;
-    color: white; font-size: 11px; line-height: 1.5; text-align: center;
+
+.label-undian {
+    display: inline-block;
+    background: rgba(255,255,255,0.25);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+    backdrop-filter: blur(6px);
+}
+
+.nama-festival {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.pemisah {
+    height: 2px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 2px;
+    margin: 20px 0;
+}
+
+.kotak-instruksi {
+    background: rgba(255,255,255,0.18);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(8px);
+}
+
+.teks-instruksi {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.nomor-tujuan {
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    margin: 8px 0;
+}
+
+.teks-format {
+    font-size: 13px;
     opacity: 0.9;
+    line-height: 1.6;
+    margin-top: 10px;
 }
 
-.syarat-kotak {
-    height: calc(100vh - 88px);
-    overflow-y: auto;
-    padding: 16px; 
-    font-size: 14px; 
-    line-height: 1.7;
-    color: #000000; 
-    background: #FFFFFF;
+.btn-kirim-sms {
+    width: 100%;
+    padding: 18px;
+    background: #006E53;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 6px 20px rgba(0,110,83,0.35);
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
 }
-.syarat-kotak h3 { font-size: 16px; font-weight: 700; margin: 20px 0 10px 0; color: #000000; }
-.syarat-kotak p { margin-bottom: 10px; text-align: justify; }
-.syarat-kotak b { font-weight: 700; }
-.kotak-setuju {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: white; padding: 12px 16px;
-    border-top: 1px solid var(--garis);
-}
-.cek-setuju { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; }
-.cek-kotak { width: 22px; height: 22px; border: 2px solid var(--hijau-utama); border-radius: 3px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; color: white; flex-shrink: 0; }
-.cek-kotak.tercentang { background: var(--hijau-utama); }
 
-.login-kotak {
-    background: white; border-radius: 20px 20px 0 0;
-    padding: 25px 20px; margin-top: 30px;
-    min-height: calc(100vh - 240px);
-    position: relative; z-index: 1;
+.btn-kirim-sms:active {
+    transform: scale(0.97);
+    background: #005a45;
 }
-.ikon-mata {
-    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
-    font-size: 20px; color: #888; cursor: pointer;
-}
-.input-wrapper { position: relative; }
-.link-bawah { text-align: center; margin-top: 16px; font-size: 13px; color: var(--teks-hijau); cursor: pointer; }
 
-.kotak-kode { display: flex; justify-content: center; gap: 10px; margin: 24px 0; }
-.kolom-kode {
-    width: 44px; height: 50px; border: 1px solid #CCC;
-    border-radius: 6px; text-align: center;
-    font-size: 18px; font-weight: 600;
-    background: #FAFAFA;
+.ikon-btn {
+    font-size: 22px;
 }
-.kolom-kode:focus { outline: none; border-color: var(--hijau-utama); }
-.info-teks { text-align: center; font-size: 13px; color: #555; line-height: 1.6; padding: 0 10px; }
-.waktu-sisa { text-align: center; color: #D32F2F; font-weight: 600; margin-top: 8px; font-size: 14px; }
-.teks-kirim-ulang { text-align: center; font-size: 13px; color: #888; margin-top: 8px; }
 
-.beranda-header {
-    background: var(--hijau-utama); color: white;
-    padding: 25px 16px 16px;
-    border-radius: 0 0 18px 18px;
+.catatan-bawah {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-top: 8px;
 }
-.salam-teks { font-size: 14px; opacity: 0.9; }
-.nama-pengguna { font-size: 20px; font-weight: 700; margin-top: 4px; }
-.kotak-saldo {
-    background: white; border-radius: 12px; padding: 16px;
-    margin: -14px 16px 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.label-saldo { font-size: 13px; color: #666; margin-bottom: 4px; }
-.nominal-saldo { font-size: 22px; font-weight: 800; color: var(--hijau-utama); }
-.tombol-lihat {
-    background: #E8F5E9; color: var(--hijau-utama);
-    border: none; padding: 5px 12px; border-radius: 20px;
-    margin-top: 8px; cursor: pointer; font-size: 14px;
-}
-.grid-menu {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 16px 8px; padding: 0 16px; margin-top: 8px;
-}
-.item-menu { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }
-.ikon-menu {
-    width: 50px; height: 50px; background: white;
-    border-radius: 12px; display: flex; align-items: center; justify-content: center;
-    font-size: 22px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-.nama-menu { font-size: 11px; color: #333; text-align: center; }
-.ruang-bawah { height: 70px; }
-.nav-bawah {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: white; display: flex; justify-content: space-around;
-    padding: 8px 0; box-shadow: 0 -1px 6px rgba(0,0,0,0.06);
-    z-index: 100;
-}
-.nav-item { display: flex; flex-direction: column; align-items: center; gap: 2px; color: #888; font-size: 20px; cursor: pointer; }
-.nav-item.aktif { color: var(--hijau-utama); }
-.nav-label { font-size: 10px; }
