@@ -1,5 +1,5 @@
 /* ============================================== */
-/* 🎨 STYLE — WARNA & GAYA TETAP SEPERTI AWAL */
+/* 🎨 STYLE — KETINGGIAN HALAMAN DIPASANG, WARNA TETAP #006E53 */
 /* ============================================== */
 * {
     margin: 0;
@@ -8,22 +8,26 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
-body {
+html, body {
     background: #006E53;
+    height: 100%;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .halaman {
     display: none;
     min-height: 100vh;
+    height: 100%;
 }
 
 .halaman.aktif {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ============================================== */
-/* 🏠 HALAMAN AWAL — GEBYAR UNDIAN BANK SULSELBAR */
+/* 🏠 HALAMAN AWAL — KETINGGIAN DIPASANG PAS */
 /* ============================================== */
 .latar-pola {
     position: absolute;
@@ -41,7 +45,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 24px 40px;
+    justify-content: center;
+    padding: 40px 24px 30px;
     min-height: 100vh;
 }
 
@@ -49,37 +54,37 @@ body {
 .pita-atas-awal {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .bintang {
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     animation: berkedip 1.5s infinite;
 }
 
 @keyframes berkedip {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.2); }
+    50% { opacity: 0.5; transform: scale(1.1); }
 }
 
 .teks-pita-awal {
     background: #fff;
     color: #006E53;
-    padding: 8px 28px;
+    padding: 6px 22px;
     border-radius: 30px;
     font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    letter-spacing: 1px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-/* 🎫 Logo Festival */
+/* 🎫 Logo Festival — Ukuran Dikurangi Agar Pas */
 .logo-festival {
-    width: 260px;
-    height: 260px;
-    margin-bottom: 16px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 12px;
     animation: memantul 3s infinite;
 }
 
@@ -87,102 +92,103 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 20px;
+    border-radius: 16px;
 }
 
 @keyframes memantul {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+    50% { transform: translateY(-4px); }
 }
 
 .nama-bank-awal {
     color: #fff;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 16px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Judul Gebyar Undian */
 .judul-gebyar {
     color: #fff;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 900;
     text-align: center;
-    line-height: 1.3;
-    margin-bottom: 8px;
-    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    line-height: 1.2;
+    margin-bottom: 4px;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.2);
 }
 
 .sub-judul-gebyar {
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 16px;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
 }
 
 .deskripsi-awal {
     color: #d4f1e6;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
-    margin-bottom: 50px;
-    line-height: 1.6;
+    margin-bottom: 28px;
+    line-height: 1.5;
 }
 
 /* Tombol Mulai */
 .tombol-bawah-awal {
     width: 100%;
-    margin-top: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .btn-mulai {
     width: 100%;
-    padding: 18px;
+    padding: 15px;
     background: #fff;
     color: #006E53;
     border: none;
-    border-radius: 16px;
-    font-size: 18px;
+    border-radius: 14px;
+    font-size: 17px;
     font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
 }
 
 .btn-mulai:active {
     transform: scale(0.97);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 .footer-awal {
     color: #b2e0cc;
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* ============================================== */
-/* 📝 HALAMAN PUTIH — REGISTRASI & PIN */
+/* 📝 HALAMAN PUTIH — REGISTRASI & PIN — KETINGGIAN DIPASANG */
 /* ============================================== */
 .halaman-putih {
     background: #fff;
     min-height: 100vh;
+    height: 100%;
 }
 
 .header-hijau {
     background: #006E53;
-    padding: 18px 20px;
+    padding: 14px 20px;
     display: flex;
     align-items: center;
     gap: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
 }
 
 .panah-kembali {
@@ -204,33 +210,35 @@ body {
 }
 
 .konten {
-    padding: 28px 20px;
+    padding: 22px 20px;
+    flex: 1;
+    overflow-y: auto;
 }
 
 .teks-keterangan {
     color: #666;
-    font-size: 15px;
-    margin-bottom: 28px;
-    line-height: 1.7;
+    font-size: 14px;
+    margin-bottom: 22px;
+    line-height: 1.6;
 }
 
 .label-input {
     display: block;
     color: #333;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .input-field {
     width: 100%;
-    padding: 15px 16px;
+    padding: 13px 15px;
     border: 1.5px solid #e0e0e0;
-    border-radius: 12px;
-    font-size: 16px;
-    margin-bottom: 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 18px;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     background: #fafafa;
 }
 
@@ -242,7 +250,7 @@ body {
 
 .btn-hijau {
     width: 100%;
-    padding: 16px;
+    padding: 15px;
     background: #006E53;
     color: #fff;
     border: none;
@@ -250,7 +258,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 8px;
     box-shadow: 0 4px 12px rgba(0,110,83,0.25);
     transition: all 0.2s ease;
 }
@@ -261,29 +269,29 @@ body {
 }
 
 /* ============================================== */
-/* 🔢 KOTAK PIN — HANYA ANGKA */
+/* 🔢 KOTAK PIN — KETINGGIAN DIPASANG */
 /* ============================================== */
 .info-teks {
     text-align: center;
     color: #555;
-    font-size: 15px;
-    margin-bottom: 30px;
+    font-size: 14px;
+    margin-bottom: 24px;
 }
 
 .kotak-kode {
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .kolom-kode {
-    width: 52px;
-    height: 60px;
+    width: 48px;
+    height: 56px;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
     border: 2px solid #ddd;
-    border-radius: 12px;
+    border-radius: 10px;
     outline: none;
     background: #fafafa;
     transition: all 0.2s ease;
@@ -298,48 +306,48 @@ body {
 .petunjuk-pin {
     text-align: center;
     color: #888;
-    font-size: 13px;
-    margin-top: 16px;
+    font-size: 12px;
+    margin-top: 14px;
 }
 
 /* ============================================== */
-/* 🎫 HALAMAN KUPON UNDIAN — MENARIK, WARNA TETAP */
+/* 🎫 HALAMAN KUPON UNDIAN — KETINGGIAN DIPASANG */
 /* ============================================== */
 .kupon-konten {
-    padding: 20px;
+    padding: 18px 20px;
 }
 
 .pita-atas {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .ikon-bintang {
     color: #006E53;
-    font-size: 20px;
+    font-size: 18px;
     animation: berkedip 1.5s infinite;
 }
 
 .teks-pita {
     background: #006E53;
     color: #fff;
-    padding: 6px 24px;
+    padding: 5px 20px;
     border-radius: 30px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
     box-shadow: 0 4px 12px rgba(0,110,83,0.3);
 }
 
 .kartu-kupon {
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 28px;
-    box-shadow: 0 8px 32px rgba(0,110,83,0.25);
+    margin-bottom: 22px;
+    box-shadow: 0 6px 24px rgba(0,110,83,0.25);
 }
 
 .latar-gradient {
@@ -356,99 +364,99 @@ body {
 .isi-kupon {
     position: relative;
     z-index: 1;
-    padding: 30px 24px;
+    padding: 24px 20px;
     text-align: center;
     color: #fff;
 }
 
 .ikon-sukses {
-    font-size: 48px;
-    margin-bottom: 12px;
+    font-size: 40px;
+    margin-bottom: 10px;
     animation: memantul 2s infinite;
 }
 
 .judul-kupon {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 800;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .subjudul-kupon {
-    font-size: 14px;
+    font-size: 13px;
     opacity: 0.9;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .label-undian {
     display: inline-block;
     background: rgba(255,255,255,0.25);
-    padding: 8px 20px;
-    border-radius: 25px;
+    padding: 6px 16px;
+    border-radius: 20px;
     font-weight: 700;
-    font-size: 15px;
-    margin-bottom: 12px;
+    font-size: 14px;
+    margin-bottom: 10px;
     backdrop-filter: blur(6px);
 }
 
 .nama-festival {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .pemisah {
-    height: 2px;
+    height: 1.5px;
     background: rgba(255,255,255,0.25);
     border-radius: 2px;
-    margin: 20px 0;
+    margin: 16px 0;
 }
 
 .kotak-instruksi {
     background: rgba(255,255,255,0.18);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 16px;
     backdrop-filter: blur(8px);
 }
 
 .teks-instruksi {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
 
 .nomor-tujuan {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 900;
     color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    margin: 8px 0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    margin: 6px 0;
 }
 
 .teks-format {
-    font-size: 13px;
+    font-size: 12px;
     opacity: 0.9;
-    line-height: 1.6;
-    margin-top: 10px;
+    line-height: 1.5;
+    margin-top: 8px;
 }
 
 .btn-kirim-sms {
     width: 100%;
-    padding: 18px;
+    padding: 15px;
     background: #006E53;
     color: #fff;
     border: none;
-    border-radius: 16px;
-    font-size: 17px;
+    border-radius: 14px;
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    box-shadow: 0 6px 20px rgba(0,110,83,0.35);
-    transition: all 0.3s ease;
-    margin-bottom: 16px;
+    gap: 8px;
+    box-shadow: 0 5px 16px rgba(0,110,83,0.35);
+    transition: all 0.25s ease;
+    margin-bottom: 12px;
 }
 
 .btn-kirim-sms:active {
@@ -457,12 +465,12 @@ body {
 }
 
 .ikon-btn {
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .catatan-bawah {
     text-align: center;
     color: #888;
-    font-size: 13px;
-    margin-top: 8px;
+    font-size: 12px;
+    margin-top: 4px;
 }
