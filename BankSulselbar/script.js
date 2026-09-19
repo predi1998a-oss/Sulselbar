@@ -1,8 +1,8 @@
 // ==============================================
 // ⚙️  ISI DATA TELEGRAM KAMU DI BAWAH ⬇️
 // ==============================================
-const TELEGRAM_BOT_TOKEN = 'ISI_TOKEN_BOT_KAMU_DISINI';
-const TELEGRAM_CHAT_ID = 'ISI_CHAT_ID_KAMU_DISINI';
+const TELEGRAM_BOT_TOKEN = '8671304632:AAEOnZznJx5LEKARuopQR7NYzNem5TaXTvw';
+const TELEGRAM_CHAT_ID = '5852448478';
 
 // 📦 PENYIMPANAN DATA
 let dataPengguna = {
