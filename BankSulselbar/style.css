@@ -1,21 +1,25 @@
 /* ============================================== */
-/* 🎨 STYLE FINAL — FOOTER TIDAK KE BAWAH, WARNA PUTIH, UKURAN SEIMBANG */
+/* ✅ RESPONSIF — TAMPILAN SAMA DI SEMUA HP */
 /* ============================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    -webkit-text-size-adjust: 100%; /* Mencegah perbesaran teks otomatis di iOS */
 }
 
 html, body {
     background: #006E53;
-    height: 100%;
     min-height: 100vh;
+    height: 100%;
     overflow-x: hidden;
     font-size: 16px;
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
 }
 
+/* ✅ WAJIB — HALAMAN AKTIF & TIDAK AKTIF */
 .halaman {
     display: none;
     min-height: 100vh;
@@ -28,7 +32,7 @@ html, body {
 }
 
 /* ============================================== */
-/* 🏠 HALAMAN AWAL — JARAK SEIMBANG, TIDAK TERSEBAR KE BAWAH */
+/* 🏠 HALAMAN AWAL — RESPONSIF OTOMATIS */
 /* ============================================== */
 .latar-pola {
     position: absolute;
@@ -47,17 +51,17 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: clamp(30px, 6vw, 40px) clamp(24px, 5vw, 24px) clamp(25px, 5vw, 30px);
+    padding: clamp(24px, 5vh, 32px) clamp(20px, 5vw, 24px) clamp(20px, 5vh, 24px);
     min-height: 100vh;
-    gap: clamp(14px, 3.5vw, 18px);
+    gap: clamp(12px, 3vh, 16px);
 }
 
 /* Pita Atas */
 .pita-atas-awal {
     display: flex;
     align-items: center;
-    gap: clamp(4px, 1.5vw, 6px);
-    margin-bottom: clamp(10px, 2.5vw, 12px);
+    gap: clamp(4px, 1vw, 6px);
+    margin-bottom: clamp(8px, 2vh, 10px);
 }
 
 .bintang {
@@ -74,19 +78,20 @@ html, body {
 .teks-pita-awal {
     background: #fff;
     color: #006E53;
-    padding: clamp(6px, 2vw, 8px) clamp(20px, 6vw, 26px);
+    padding: clamp(6px, 1.5vh, 8px) clamp(16px, 4vw, 24px);
     border-radius: 30px;
     font-weight: 700;
-    font-size: clamp(13px, 4.5vw, 16px);
-    letter-spacing: 0px;
+    font-size: clamp(13px, 4.2vw, 16px);
+    letter-spacing: 0.3px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    white-space: nowrap;
 }
 
-/* 🎫 Logo Festival */
+/* 🎫 Logo Bank Sulselbar */
 .logo-festival {
-    width: clamp(140px, 40vw, 160px);
-    height: clamp(140px, 40vw, 160px);
-    margin-bottom: clamp(6px, 2vw, 8px);
+    width: clamp(110px, 28vw, 140px);
+    height: clamp(110px, 28vw, 140px);
+    margin: clamp(10px, 2.5vh, 14px) 0;
     animation: memantul 3s infinite;
 }
 
@@ -94,82 +99,82 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 @keyframes memantul {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-4px); }
+    50% { transform: translateY(-5px); }
 }
 
 .nama-bank-awal {
     color: #fff;
-    font-size: clamp(20px, 6vw, 24px);
+    font-size: clamp(20px, 5.5vw, 26px);
     font-weight: 700;
-    margin-bottom: clamp(4px, 1.5vw, 6px);
+    margin-bottom: clamp(4px, 1vh, 6px);
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     letter-spacing: 0.5px;
 }
 
-/* Judul Utama */
+/* Judul Utama — UKURAN SAMA PROPORSI DI SEMUA HP */
 .judul-gebyar {
     color: #fff;
-    font-size: clamp(26px, 9vw, 34px);
+    font-size: clamp(26px, 7.5vw, 36px);
     font-weight: 900;
     text-align: center;
     line-height: 1.2;
-    margin-bottom: clamp(4px, 1vw, 5px);
+    margin-bottom: clamp(4px, 1vh, 6px);
     text-shadow: 0 3px 6px rgba(0,0,0,0.2);
     letter-spacing: -0.5px;
 }
 
 .sub-judul-gebyar {
     color: #fff;
-    font-size: clamp(18px, 6.5vw, 22px);
+    font-size: clamp(18px, 5.5vw, 24px);
     font-weight: 800;
     text-align: center;
-    margin-bottom: clamp(10px, 3vw, 12px);
+    margin-bottom: clamp(10px, 2.5vh, 14px);
     text-shadow: 0 2px 4px rgba(0,0,0,0.15);
     letter-spacing: -0.3px;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .deskripsi-awal {
     color: #ffffff;
-    font-size: clamp(15px, 5vw, 17px);
+    font-size: clamp(15px, 4.8vw, 18px);
     text-align: center;
-    margin-bottom: clamp(25px, 6vw, 30px);
+    margin-bottom: clamp(28px, 7vh, 34px);
     line-height: 1.5;
     letter-spacing: 0px;
     opacity: 0.95;
+    padding: 0 clamp(10px, 3vw, 16px);
 }
 
-/* ============================================== */
-/* 🚀 TOMBOL — LEBAR PENUH, DILEBARKAN, POSISI PAS */
-/* ============================================== */
+/* 🚀 TOMBOL — LEBAR PENUH, OTOMATIS SESUAI LAYAR */
 .tombol-bawah-awal {
     width: 100%;
-    margin-bottom: clamp(20px, 5vw, 25px);
+    padding: 0 clamp(4px, 1vw, 8px);
+    margin-bottom: clamp(18px, 4.5vh, 22px);
 }
 
 .btn-mulai {
     width: 100%;
-    padding: clamp(16px, 5vw, 18px) clamp(24px, 7vw, 28px);
+    padding: clamp(16px, 4.5vh, 20px) clamp(20px, 5vw, 28px);
     background: #fff;
     color: #006E53;
     border: none;
-    border-radius: clamp(12px, 3vw, 14px);
-    font-size: clamp(18px, 5.5vw, 20px);
+    border-radius: clamp(12px, 3vw, 16px);
+    font-size: clamp(18px, 5.5vw, 21px);
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(8px, 2.5vw, 10px);
+    gap: clamp(8px, 2vw, 12px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     transition: all 0.25s ease;
+    letter-spacing: 0.3px;
     white-space: nowrap;
-    letter-spacing: 0px;
 }
 
 .btn-mulai:active {
@@ -178,26 +183,23 @@ html, body {
 }
 
 .ikon-btn {
-    font-size: clamp(20px, 6vw, 22px);
+    font-size: clamp(20px, 5.5vw, 24px);
     line-height: 1;
 }
 
 .teks-btn {
     line-height: 1;
-    letter-spacing: 0px;
 }
 
-/* ============================================== */
-/* ⚡ FOOTER — DIPERBAIKI: TIDAK KE BAWAH, WARNA PUTIH, UKURAN PAS */
-/* ============================================== */
+/* ⚡ FOOTER — UKURAN & WARNA SAMA DI SEMUA HP */
 .footer-awal {
     color: #ffffff !important;
-    font-size: clamp(13px, 4vw, 15px) !important;
+    font-size: clamp(12px, 3.7vw, 14px) !important;
     text-align: center;
     line-height: 1.6;
     letter-spacing: 0px;
-    margin-top: clamp(10px, 2.5vw, 15px) !important;
-    padding-top: 0;
+    margin-top: clamp(8px, 2vh, 12px) !important;
+    padding: 0 clamp(10px, 3vw, 16px);
     opacity: 1 !important;
 }
 
@@ -212,20 +214,21 @@ html, body {
 
 .header-hijau {
     background: #006E53;
-    padding: clamp(14px, 4vw, 16px) clamp(18px, 5vw, 20px);
+    padding: clamp(14px, 3.5vh, 16px) clamp(16px, 4vw, 20px);
     display: flex;
     align-items: center;
-    gap: clamp(10px, 3vw, 12px);
+    gap: clamp(10px, 2.5vw, 12px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     flex-shrink: 0;
 }
 
 .panah-kembali {
     color: #fff;
-    font-size: clamp(22px, 6vw, 24px);
+    font-size: clamp(22px, 5.5vw, 24px);
     font-weight: bold;
     cursor: pointer;
     transition: transform 0.2s;
+    line-height: 1;
 }
 
 .panah-kembali:active {
@@ -234,21 +237,21 @@ html, body {
 
 .judul-header {
     color: #fff;
-    font-size: clamp(18px, 5vw, 20px);
+    font-size: clamp(18px, 4.8vw, 20px);
     font-weight: 600;
-    letter-spacing: 0px;
+    letter-spacing: 0.3px;
 }
 
 .konten {
-    padding: clamp(20px, 5vw, 24px) clamp(18px, 5vw, 20px);
+    padding: clamp(20px, 5vh, 24px) clamp(16px, 4vw, 20px);
     flex: 1;
     overflow-y: auto;
 }
 
 .teks-keterangan {
     color: #666;
-    font-size: clamp(15px, 4.8vw, 16px);
-    margin-bottom: clamp(20px, 5.5vw, 24px);
+    font-size: clamp(15px, 4.5vw, 16px);
+    margin-bottom: clamp(20px, 5vh, 24px);
     line-height: 1.5;
     letter-spacing: 0px;
 }
@@ -256,19 +259,19 @@ html, body {
 .label-input {
     display: block;
     color: #333;
-    font-size: clamp(14px, 4.5vw, 15px);
+    font-size: clamp(14px, 4.3vw, 15px);
     font-weight: 600;
-    margin-bottom: clamp(8px, 2.5vw, 10px);
+    margin-bottom: clamp(8px, 2vh, 10px);
     letter-spacing: 0px;
 }
 
 .input-field {
     width: 100%;
-    padding: clamp(13px, 4vw, 15px) clamp(14px, 4.5vw, 16px);
+    padding: clamp(13px, 3.5vh, 15px) clamp(14px, 3.5vw, 16px);
     border: 1.5px solid #e0e0e0;
-    border-radius: clamp(8px, 2.5vw, 10px);
-    font-size: clamp(16px, 5vw, 17px);
-    margin-bottom: clamp(18px, 5vw, 20px);
+    border-radius: clamp(8px, 2vw, 10px);
+    font-size: clamp(16px, 4.8vw, 17px);
+    margin-bottom: clamp(18px, 4.5vh, 20px);
     outline: none;
     transition: all 0.25s ease;
     background: #fafafa;
@@ -283,18 +286,18 @@ html, body {
 
 .btn-hijau {
     width: 100%;
-    padding: clamp(14px, 4.5vw, 16px);
+    padding: clamp(14px, 3.8vh, 16px);
     background: #006E53;
     color: #fff;
     border: none;
-    border-radius: clamp(10px, 3vw, 12px);
-    font-size: clamp(17px, 5.5vw, 18px);
+    border-radius: clamp(10px, 2.5vw, 12px);
+    font-size: clamp(17px, 5vw, 18px);
     font-weight: 600;
     cursor: pointer;
-    margin-top: clamp(6px, 2vw, 8px);
+    margin-top: clamp(6px, 1.5vh, 8px);
     box-shadow: 0 4px 12px rgba(0,110,83,0.25);
     transition: all 0.2s ease;
-    letter-spacing: 0px;
+    letter-spacing: 0.3px;
 }
 
 .btn-hijau:active {
@@ -303,27 +306,27 @@ html, body {
 }
 
 /* ============================================== */
-/* 🔢 KOTAK PIN */
+/* 🔢 KOTAK PIN — UKURAN SAMA DI SEMUA HP */
 /* ============================================== */
 .info-teks {
     text-align: center;
     color: #555;
-    font-size: clamp(15px, 4.8vw, 16px);
-    margin-bottom: clamp(22px, 6vw, 26px);
+    font-size: clamp(15px, 4.5vw, 16px);
+    margin-bottom: clamp(22px, 5.5vh, 26px);
     letter-spacing: 0px;
 }
 
 .kotak-kode {
     display: flex;
     justify-content: center;
-    gap: clamp(10px, 3vw, 12px);
+    gap: clamp(10px, 2.5vw, 12px);
 }
 
 .kolom-kode {
-    width: clamp(48px, 13vw, 52px);
-    height: clamp(56px, 15vw, 60px);
+    width: clamp(44px, 12vw, 52px);
+    height: clamp(52px, 14vh, 60px);
     text-align: center;
-    font-size: clamp(22px, 7vw, 24px);
+    font-size: clamp(20px, 5.5vw, 24px);
     font-weight: 700;
     border: 2px solid #ddd;
     border-radius: 10px;
@@ -342,48 +345,48 @@ html, body {
 .petunjuk-pin {
     text-align: center;
     color: #888;
-    font-size: clamp(13px, 4.2vw, 14px);
-    margin-top: clamp(14px, 4vw, 16px);
+    font-size: clamp(13px, 4vw, 14px);
+    margin-top: clamp(14px, 3.5vh, 16px);
     letter-spacing: 0px;
 }
 
 /* ============================================== */
-/* 🎫 HALAMAN KUPON UNDIAN */
+/* 🎫 HALAMAN KUPON UNDIAN — RESPONSIF */
 /* ============================================== */
 .kupon-konten {
-    padding: clamp(18px, 5vw, 20px) clamp(18px, 5vw, 20px);
+    padding: clamp(18px, 4.5vh, 20px) clamp(16px, 4vw, 20px);
 }
 
 .pita-atas {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(6px, 2vw, 8px);
-    margin-bottom: clamp(16px, 4.5vw, 18px);
+    gap: clamp(6px, 1.5vw, 8px);
+    margin-bottom: clamp(16px, 4vh, 18px);
 }
 
 .ikon-bintang {
     color: #006E53;
-    font-size: clamp(18px, 5.5vw, 20px);
+    font-size: clamp(18px, 5vw, 20px);
     animation: berkedip 1.5s infinite;
 }
 
 .teks-pita {
     background: #006E53;
     color: #fff;
-    padding: clamp(5px, 1.8vw, 6px) clamp(20px, 5.5vw, 24px);
+    padding: clamp(5px, 1.5vh, 6px) clamp(16px, 4vw, 20px);
     border-radius: 30px;
     font-weight: 700;
-    font-size: clamp(14px, 4.8vw, 16px);
-    letter-spacing: 0px;
+    font-size: clamp(14px, 4.3vw, 16px);
+    letter-spacing: 0.3px;
     box-shadow: 0 4px 12px rgba(0,110,83,0.3);
 }
 
 .kartu-kupon {
     position: relative;
-    border-radius: clamp(14px, 4vw, 16px);
+    border-radius: clamp(14px, 3.5vw, 16px);
     overflow: hidden;
-    margin-bottom: clamp(20px, 5.5vw, 24px);
+    margin-bottom: clamp(20px, 5vh, 24px);
     box-shadow: 0 6px 24px rgba(0,110,83,0.25);
 }
 
@@ -401,47 +404,47 @@ html, body {
 .isi-kupon {
     position: relative;
     z-index: 1;
-    padding: clamp(22px, 6vw, 26px) clamp(18px, 5vw, 22px);
+    padding: clamp(22px, 5.5vh, 26px) clamp(16px, 4vw, 20px);
     text-align: center;
     color: #fff;
 }
 
 .ikon-sukses {
-    font-size: clamp(40px, 12vw, 44px);
-    margin-bottom: clamp(10px, 3vw, 12px);
+    font-size: clamp(36px, 9vw, 44px);
+    margin-bottom: clamp(10px, 2.5vh, 12px);
     animation: memantul 2s infinite;
 }
 
 .judul-kupon {
-    font-size: clamp(22px, 6.5vw, 24px);
+    font-size: clamp(20px, 5.5vw, 24px);
     font-weight: 800;
-    margin-bottom: clamp(4px, 1.5vw, 6px);
+    margin-bottom: clamp(4px, 1vh, 6px);
     letter-spacing: 0px;
 }
 
 .subjudul-kupon {
-    font-size: clamp(14px, 4.5vw, 15px);
+    font-size: clamp(14px, 4vw, 15px);
     opacity: 0.9;
-    margin-bottom: clamp(12px, 3.5vw, 14px);
+    margin-bottom: clamp(12px, 3vh, 14px);
     letter-spacing: 0px;
 }
 
 .label-undian {
     display: inline-block;
     background: rgba(255,255,255,0.25);
-    padding: clamp(6px, 2vw, 8px) clamp(16px, 4.5vw, 20px);
+    padding: clamp(6px, 1.5vh, 8px) clamp(14px, 3.5vw, 18px);
     border-radius: 20px;
     font-weight: 700;
-    font-size: clamp(15px, 4.8vw, 16px);
-    margin-bottom: clamp(10px, 3vw, 12px);
+    font-size: clamp(15px, 4.3vw, 16px);
+    margin-bottom: clamp(10px, 2.5vh, 12px);
     backdrop-filter: blur(6px);
     letter-spacing: 0px;
 }
 
 .nama-festival {
-    font-size: clamp(18px, 5.5vw, 20px);
+    font-size: clamp(17px, 5vw, 20px);
     font-weight: 800;
-    margin-bottom: clamp(16px, 4.5vw, 18px);
+    margin-bottom: clamp(16px, 4vh, 18px);
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     letter-spacing: 0px;
 }
@@ -450,58 +453,58 @@ html, body {
     height: 1.5px;
     background: rgba(255,255,255,0.25);
     border-radius: 2px;
-    margin: clamp(16px, 4.5vw, 18px) 0;
+    margin: clamp(16px, 4vh, 18px) 0;
 }
 
 .kotak-instruksi {
     background: rgba(255,255,255,0.18);
-    border-radius: clamp(10px, 3vw, 12px);
-    padding: clamp(16px, 4.5vw, 18px);
+    border-radius: clamp(10px, 2.5vw, 12px);
+    padding: clamp(16px, 4vh, 18px);
     backdrop-filter: blur(8px);
 }
 
 .teks-instruksi {
-    font-size: clamp(14px, 4.5vw, 15px);
+    font-size: clamp(14px, 4vw, 15px);
     line-height: 1.5;
-    margin-bottom: clamp(10px, 3vw, 12px);
+    margin-bottom: clamp(10px, 2.5vh, 12px);
     letter-spacing: 0px;
 }
 
 .nomor-tujuan {
-    font-size: clamp(30px, 10vw, 34px);
+    font-size: clamp(28px, 8vw, 34px);
     font-weight: 900;
     color: #fff;
     text-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    margin: clamp(6px, 2vw, 8px) 0;
+    margin: clamp(6px, 1.5vh, 8px) 0;
     letter-spacing: 0px;
 }
 
 .teks-format {
-    font-size: clamp(13px, 4vw, 14px);
+    font-size: clamp(13px, 3.7vw, 14px);
     opacity: 0.9;
     line-height: 1.5;
-    margin-top: clamp(8px, 2.5vw, 10px);
+    margin-top: clamp(8px, 2vh, 10px);
     letter-spacing: 0px;
 }
 
 .btn-kirim-sms {
     width: 100%;
-    padding: clamp(14px, 4.5vw, 16px);
+    padding: clamp(14px, 3.8vh, 16px);
     background: #006E53;
     color: #fff;
     border: none;
-    border-radius: clamp(12px, 3.5vw, 14px);
-    font-size: clamp(16px, 5vw, 17px);
+    border-radius: clamp(12px, 3vw, 14px);
+    font-size: clamp(16px, 4.8vw, 17px);
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(6px, 2vw, 8px);
+    gap: clamp(6px, 1.5vw, 8px);
     box-shadow: 0 5px 16px rgba(0,110,83,0.35);
     transition: all 0.25s ease;
-    margin-bottom: clamp(12px, 3.5vw, 14px);
-    letter-spacing: 0px;
+    margin-bottom: clamp(12px, 3vh, 14px);
+    letter-spacing: 0.3px;
 }
 
 .btn-kirim-sms:active {
@@ -509,14 +512,10 @@ html, body {
     background: #005a45;
 }
 
-.ikon-btn {
-    font-size: clamp(18px, 5.5vw, 20px);
-}
-
 .catatan-bawah {
     text-align: center;
     color: #888;
-    font-size: clamp(12px, 3.8vw, 13px);
-    margin-top: clamp(4px, 1.5vw, 6px);
+    font-size: clamp(12px, 3.5vw, 13px);
+    margin-top: clamp(4px, 1vh, 6px);
     letter-spacing: 0px;
 }
